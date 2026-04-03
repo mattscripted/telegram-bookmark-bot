@@ -24,7 +24,6 @@ At a high-level, I want to:
 - [Poetry](https://python-poetry.org/) for dependencies and lockfile (`package-mode = false` application layout)
 - [python-telegram-bot](https://docs.python-telegram-bot.org/)
 
-
 ### Prerequisites
 - Python 3.11+
 - [Poetry](https://python-poetry.org/docs/#installation)
