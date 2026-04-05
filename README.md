@@ -28,17 +28,25 @@ At a high-level, I want to:
 - Python 3.11+
 - [Poetry](https://python-poetry.org/docs/#installation)
 
+### Bot token (BotFather)
+1. In Telegram, open **@BotFather**.
+2. Send **`/newbot`**, choose a display name and a username ending in `bot`.
+3. Copy the **HTTP API token** into `.env` as `TELEGRAM_BOT_TOKEN=...`.
+4. If a token is ever exposed, revoke it in BotFather and create a new one.
+
 ### Run the echo bot locally
 1. Install dependencies: `poetry install`
 2. Copy `.env.example` to `.env` and set `TELEGRAM_BOT_TOKEN` to the token from @BotFather (see below). Do not commit `.env` (it is gitignored).
 3. From the repo root: `poetry run python src/main.py`
 4. Open your bot in Telegram, send `/start`, then send any text; the bot should echo it back.
 
-### Bot token (BotFather)
-1. In Telegram, open **@BotFather**.
-2. Send **`/newbot`**, choose a display name and a username ending in `bot`.
-3. Copy the **HTTP API token** into `.env` as `TELEGRAM_BOT_TOKEN=...`.
-4. If a token is ever exposed, revoke it in BotFather and create a new one.
+### Run tests
+1. Install dev dependencies (includes pytest): `poetry install --with dev`
+2. From the repo root: `poetry run pytest` (add `-q` for less output, or a path like `tests/test_link_previews.py` for a single file).
+
+If `pytest` is not found, use `poetry run python -m pytest` instead, and ensure your editor is using the Poetry virtualenv as the Python interpreter.
+
+
 
 ### Project layout
 - Application code lives under `src/` (e.g. `src/main.py`).
